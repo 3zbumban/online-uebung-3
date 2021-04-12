@@ -2,7 +2,7 @@
   "development": {
     "username": "admin",
     "password": "adminpassword",
-    "database": "wqm-db",
+    "database": "dev-db",
     "host": "localhost",
     "dialect": "postgres",
     "logging": false

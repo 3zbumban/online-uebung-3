@@ -5,7 +5,7 @@ const saveUserToDb = (person) => {
 };
 
 const getAllPersons = () => {
-	return models.hobby.findAll({
+	return models.person.findAll({
 		include: [{
 			model: models.hobby,
 			required: true,

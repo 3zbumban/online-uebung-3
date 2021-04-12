@@ -15,7 +15,7 @@ const apiV2 = require("./routes/apiV2");
 const app = express();
 
 app.use(cors());
-app.use(helmet());
+// app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
 
