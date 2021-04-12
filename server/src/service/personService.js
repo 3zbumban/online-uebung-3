@@ -1,11 +1,11 @@
-const { models } = require("../db/db");
+const { sequelize: { models } } = require("../db/models/index");
 
 const saveUserToDb = (person) => {
 	return models.person.create(person);
 };
 
 const getAllPersons = () => {
-	return models.person.findAll({
+	return models.hobby.findAll({
 		include: [{
 			model: models.hobby,
 			required: true,

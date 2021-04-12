@@ -7,6 +7,7 @@ const config = require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 
 // const db = require("./db/db");
+console.log(process.env.NODE_ENV);
 
 const apiV1 = require("./routes/apiV1");
 const apiV2 = require("./routes/apiV2");
