@@ -1,0 +1,26 @@
+### extension benötigt: "rest client"
+
+POST http://localhost:3030/v2/person
+Content-Type: application/json
+
+{
+    "name": "alex",
+    "alter": 21
+}
+
+###
+
+POST http://localhost:3030/v2/hobby
+Content-Type: application/json
+
+{
+    "name": "swimm",
+    "personId": 14
+}
+
+###
+
+GET http://localhost:3030/v2/persons
+Content-Type: application/json
+
+###

@@ -1,4 +1,4 @@
-const { models } = require("../db/db");
+const { sequelize: {models} } = require("../db/models/index");
 
 const saveUserToDb = (person) => {
 	return models.person.create(person);

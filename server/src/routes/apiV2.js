@@ -1,6 +1,7 @@
 const { Router } = require("express");
 
 const personService = require("../service/personService");
+const hobbyService = require("../service/hobbyService");
 
 const router = Router();
 
@@ -22,11 +23,9 @@ router.post("/person", async (req, res) => {
 
 });
 
-// für hobbys kein service erstellt (schlecht!)
-const hobbyModell = require("../db/db").models.hobby;
 router.post("/hobby", async (req, res) => {
 	try {
-		const dbres = await hobbyModell.create(req.body);
+		const dbres = await hobbyService.saveHobbyToDb(req.body);
 		res.json(dbres);
 	} catch (error) {
 		console.log(error);
@@ -35,13 +34,9 @@ router.post("/hobby", async (req, res) => {
 });
 
 router.get("/hobby/:id", async (req, res) => {
+	// const { id } = req.params;
 	try {
-		const dbres = await hobbyModell.findAll({
-			where: {
-				personId: req.params.id 
-			}
-		});
-
+		const dbres = await hobbyService.getHobbyWithUserId(req.params.id);
 		res.json(dbres);
 	} catch (error) {
 		console.log(error);
@@ -56,18 +51,5 @@ router.get("/persons", async (req, res) => {
 		dbresp
 	});
 });
-
-// unfertige programmatische version
-// router.get("/person/:id", async (req, res) => {
-// 	const dbresp = await personService.getAllPersonById(req.params.id);
-// 	const dbres = await hobbyModell.findAll({
-// 		where: {
-// 			personId: dbresp.id
-// 		}
-// 	});
-// 	res.status(200).json({
-// 		dbresp
-// 	});
-// });
 
 module.exports = router;
