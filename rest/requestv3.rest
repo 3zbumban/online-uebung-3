@@ -1,0 +1,31 @@
+### extension benötigt: "rest client"
+
+POST http://localhost:3030/v3/person
+Content-Type: application/json
+
+{
+    "name": "svenno",
+    "alter": 21,
+    "hobbys": ["sport", "swimm", "bike"]
+}
+
+###
+
+DELETE http://localhost:3030/v3/hobby/17
+Content-Type: application/json
+###
+
+POST http://localhost:3030/v2/hobby
+Content-Type: application/json
+
+{
+    "name": "swimm",
+    "personId": 14
+}
+
+###
+
+GET http://localhost:3030/v2/persons
+Content-Type: application/json
+
+###

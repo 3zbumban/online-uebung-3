@@ -1,0 +1,4 @@
+- vue.js.v3 events: https://v3.vuejs.org/guide/migration/events-api.html#overview
+- was fehlt?
+  - try, catch
+- was sollte besser sein

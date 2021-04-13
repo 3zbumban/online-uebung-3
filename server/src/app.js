@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 const apiV1 = require("./routes/apiV1");
 const apiV2 = require("./routes/apiV2");
+const apiV3 = require("./routes/apiV3");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use("/v1", apiV1);
 app.use("/v2", apiV2);
+app.use("/v3", apiV3);
 
 app.listen(PORT, () => {
 	console.log(`[d] http://localhost:${PORT}`);
