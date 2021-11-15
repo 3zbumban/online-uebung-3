@@ -3,7 +3,7 @@
     "username": "admin",
     "password": "adminpassword",
     "database": "database_development",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "port": 5432,
     "dialect": "postgres"
   },
@@ -15,10 +15,11 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
+    "username": "admin",
+    "password": "adminpassword",
     "database": "database_production",
-    "host": "127.0.0.1",
+    "host": "db",
+    "port": 5432,
     "dialect": "postgres"
   }
 }
